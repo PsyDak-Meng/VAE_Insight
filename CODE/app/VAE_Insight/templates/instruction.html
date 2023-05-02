@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children current"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+
+<article class="entry">
+
+    <header class="entry__header">
+
+        <h2 class="entry__title h1">
+            <a href="introduction.html" title="">How should you use this website.</a>
+        </h2>
+
+        <div class="entry__meta">
+            <ul>
+                <li>March 29, 2023</li>
+                <li><a href="#" title="" rel="category tag">Instruction</a></li>
+                <li>TEAM023</li>
+            </ul>
+        </div>
+     
+    </header> <!-- entry__header -->
+
+    <div class="entry__content">
+        <p class="lead">
+            The VAE-Insight is an integrated website to provide users 
+            with complete information on vaccines and side effects as well as visualization of models and their result.
+            Users can use this website in the following ways:
+        </p>
+        <ol>
+            <li>
+                By clicking the LOGIN button in the navigation bar, users can login their account or 
+                register a new account follow the instructions on the registration page.
+                <ul>
+                    <li>The website pays great attention to the private information of users. </li>
+                    <li>
+                        When a stranger is not logged in to any account, he can only view limited information in restriction mode.
+                        He can explore the relationship between the features and side effects of the vaccine through the FACTORS part.
+                        But, he cannot do anything about viewing, editing the information, and using the prediction function.
+                    </li>
+                    <li>
+                        Ater login, users can use the prediction function to predict the side effects of the vaccine
+                        based on their own information.
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                By clicking the PREDICTION button in the navigation bar, users can view, edit their own information about the vaccine.
+                And, they can use the prediction function to predict the side effects of the vaccine based on their own information by click the PREDICTION button.
+            </li>
+
+            <li>
+                By clicking the FACTORS button in the navigation bar, users can employ the visualization constructed by us to explore 
+                the in-depth relationship between the features and side effects of the vaccine.
+                <ul>
+                    <li>
+                        Users can select the features and side effects they want to know about by clicking the dropdown list.
+                    </li>
+                    <li>
+                        The heatmap plainly visualizes the correlation between the selected variables using a set of color gradients.
+                    </li>
+                    <li>
+                        The Sankey diagram will show the correlation (causality) between them in the form of flows, 
+                        and the width of the flows will intuitively reflect the size of the different links. 
+                        Through the presentation of the Sankey diagram, 
+                        the user can well assess his own situation regarding the risk of side effects, which is one of the main goals of the website.
+                    </li>
+                </ul>
+            </li>
+
+        </ol>
+
+
+    </div> <!-- entry__content -->
+
+    <p class="entry__tags">
+        <span>Tagged in </span>:
+        <a href="#0">Login</a>, <a href="#0">Prediction</a>, <a href="#0">Factors</a>
+    </p>
+
+    <ul class="entry__post-nav h-group">
+        <li class="prev"><a rel="prev" href="{{ url_for('introduction') }}"><strong class="h6">Previous Article</strong>Introduction</a></li>
+        <li class="next"><a rel="next" href="{{ url_for('referenced') }}"><strong class="h6">Next Article</strong>References</a></li>
+    </ul>
+
+</article> <!-- end entry -->
+
+
+{% endblock %}

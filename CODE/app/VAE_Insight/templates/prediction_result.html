@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li class="current"><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div id="main" class="s-content__main large-8 column">
+        <h1>Prediction Result</h1>
+        <p>Which System of Your Body Might Be Attacked?</p>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="column">
+        <figure>
+            <figcaption>Sore Arm</figcaption>
+            <img src="../static/images/symptompics/Sore_Arm.png" alt="Sore Arm" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[0] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Tiredness</figcaption>
+            <img src="../static/images/symptompics/Tiredness.png" alt="Tiredness" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[1] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Headache</figcaption>
+            <img src="../static/images/symptompics/Headache.png" alt="Headache" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[2] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Muscle Aches/Pain</figcaption>
+            <img src="../static/images/symptompics/Muscle_Pain.png" alt="Muscle Pain" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[3] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Feeling Unwell</figcaption>
+            <img src="../static/images/symptompics/Feeling_Unwell.png" alt="Feeling Unwell" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[4] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Fever</figcaption>
+            <img src="../static/images/symptompics/Fever.png" alt="Fever" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[5] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Injection Site Pain</figcaption>
+            <img src="../static/images/symptompics/Injection_Site_Pain.png" alt="Injection Site Pain" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[6] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Redness In The Arm</figcaption>
+            <img src="../static/images/symptompics/Redness_In_The_Arm.png" alt="Redness In The Arm" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[7] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Joint Pain</figcaption>
+            <img src="../static/images/symptompics/Joint_Pain.png" alt="Joint Pain" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[8] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Chills</figcaption>
+            <img src="../static/images/symptompics/Chills.png" alt="Chills" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[9] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Swollen Arm</figcaption>
+            <img src="../static/images/symptompics/Swollen_Arm.png" alt="Swollen Arm" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[10] }}</p>
+    </div>
+
+    <div class="column">
+        <figure>
+            <figcaption>Nausea</figcaption>
+            <img src="../static/images/symptompics/Nausea.png" alt="Nausea" style="border: 1px solid cornflowerblue;" height="73" width="86" class="gallery-pict" />
+        </figure>
+        <p>Result: {{ result[11] }}</p>
+    </div>
+</div>
+
+{% endblock %}

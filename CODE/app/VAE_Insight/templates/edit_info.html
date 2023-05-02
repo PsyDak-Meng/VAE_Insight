@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li class="current"><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+<div class="row add-bottom">
+    <div class="column large-full">
+        <h1 class="h-remove-top">WELCOME {{ current_user.username }}!!</h1>
+        <h3>Please change your personal information.</h3>
+
+        <form action="" method="post">
+            {{ form.csrf_token }}
+
+            <div>
+                <label for="sampleInput">AGE</label>
+                <input class="h-full-width" type="text" name="feature1" placeholder="example: 35" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">SEX (F, M, U)</label>
+                <input class="h-full-width" type="text" name="feature2" placeholder="example: F" id="sampleInput" required>
+            </div>
+            
+            <div>
+                <label for="sampleInput">ER_VISIT (N, Y)</label>
+                <input class="h-full-width" type="text" name="feature3" placeholder="example: Y" id="sampleInput" required>
+            </div>
+            
+            <div>
+                <label for="sampleInput">HOSPITAL (N, Y)</label>
+                <input class="h-full-width" type="text" name="feature4" placeholder="example: N" id="sampleInput" required>
+            </div>
+            
+            <div>
+                <label for="sampleInput">DAYS IN HOSPITAL</label>
+                <input class="h-full-width" type="text" name="feature5" placeholder="example: 8" id="sampleInput" required>
+            </div>
+            
+            <div>
+                <label for="sampleInput">DISABLE (N, Y)</label>
+                <input class="h-full-width" type="text" name="feature6" placeholder="example: N" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">IS RECOVERED? (N, Y)</label>
+                <input class="h-full-width" type="text" name="feature7" placeholder="example: Y" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">DURATION</label>
+                <input class="h-full-width" type="text" name="feature8" placeholder="example: 4" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">V_ADMINBY (MIL, OTH, PUB, PVT)</label>
+                <input class="h-full-width" type="text" name="feature9" placeholder="example: MIL" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">V_FUNDBY (MIL, OTH, PUB, PVT)</label>
+                <input class="h-full-width" type="text" name="feature10" placeholder="example: MIL" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">FORM_VERS</label>
+                <input class="h-full-width" type="text" name="feature11" placeholder="example: 2" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">CUR_ILL_num</label>
+                <input class="h-full-width" type="text" name="feature12" placeholder="example: 23" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">HISTORY_num</label>
+                <input class="h-full-width" type="text" name="feature13" placeholder="example: 11" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">PRIOR_VAX_num</label>
+                <input class="h-full-width" type="text" name="feature14" placeholder="example: 32" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">LAB_num</label>
+                <input class="h-full-width" type="text" name="feature15" placeholder="example: 1341" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">MEDS_num</label>
+                <input class="h-full-width" type="text" name="feature16" placeholder="example: 23" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">VAX_TYPE</label>
+                <input class="h-full-width" type="text" name="feature17" placeholder="example: HPV2" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">VAX_MANU</label>
+                <input class="h-full-width" type="text" name="feature18" placeholder="example: AVENTIS PASTEUR" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">VAX_DOSE_SERIES</label>
+                <input class="h-full-width" type="text" name="feature19" placeholder="example: 3" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">VAX_ROUTE</label>
+                <input class="h-full-width" type="text" name="feature20" placeholder="example: IM" id="sampleInput" required>
+            </div>
+
+            <div>
+                <label for="sampleInput">VAX_SITE</label>
+                <input class="h-full-width" type="text" name="feature21" placeholder="example: AR" id="sampleInput" required>
+            </div>
+            
+            <input class="btn--primary h-full-width" type="submit" value="confirm">
+        
+        </form>
+    </div>
+</div> <!-- end row -->
+{% endblock %}

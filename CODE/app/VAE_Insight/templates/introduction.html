@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children current"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+
+<article class="entry">
+
+    <header class="entry__header">
+
+        <h2 class="entry__title h1">
+            <a href="introduction.html" title="">Hey! We Are VAE-Insight</a>
+        </h2>
+
+        <div class="entry__meta">
+            <ul>
+                <li>March 29, 2023</li>
+                <li><a href="#" title="" rel="category tag">Introduciton</a></li>
+                <li>TEAM023</li>
+            </ul>
+        </div>
+     
+    </header> <!-- entry__header -->
+
+    <div class="entry__content">
+        <p class="lead">
+            During the past two years of the pandemic, 
+            people have seen voluminous hype about the vaccine's effectiveness and, 
+            at the same time, heaps of misinformed allegations about the vaccine's side effects. 
+            The non-transparency of the potential danger of vaccines makes it challenging to build utter trust in them. 
+            As recipients, people often oscillate between the hazards of the virus and the vaccine's potential side effects and often feel fear and anxiety. 
+            Therefore, the VAE-Insight is design to make some difference in helping every person who may not understand those obscure biomedical sciences figure out the effects of the vaccine, 
+            especially its harmful effects, considering that its positivity has been well reported and publicized.
+        </p>
+
+        
+    </div> <!-- entry__content -->
+
+    <p class="entry__tags">
+        <span>Tagged in </span>:
+        <a href="#0">Vaccine</a>, <a href="#0">Adverse Effect</a>, <a href="#0">Integrated System</a>
+    </p>
+
+    <ul class="entry__post-nav h-group">
+        <li class="prev"><a rel="prev" href="{{ url_for('referenced') }}"><strong class="h6">Previous Article</strong>References</a></li>
+        <li class="next"><a rel="next" href="{{ url_for('instruction') }}"><strong class="h6">Next Article</strong>Instruction</a></li>
+    </ul>
+
+</article> <!-- end entry -->
+
+
+{% endblock %}

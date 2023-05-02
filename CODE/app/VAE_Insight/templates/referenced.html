@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children current"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+
+    <article class="entry">
+
+        <header class="entry__header">
+
+            <h2 class="entry__title h1">
+                <a href="{{ url_for('referenced') }}" title="">The whole list of the referenced paper.</a>
+            </h2>
+
+            <div class="entry__meta">
+                <ul>
+                    <li>April 05, 2023</li>
+                    <li><a href="{{ url_for('referenced') }}" title="" rel="category tag">References</a></li>
+                    <li>TEAM023</li>
+                </ul>
+            </div>
+        
+        </header> <!-- entry__header -->
+
+        <div class="entry__content">
+            <ol>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/34935921/">Analysis of COVID-19 vaccine type and adverse effects following vaccination.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/34089044/">Infectious disease mRNA vaccines and a review on epitope prediction for Vaccine Design.</a></li>
+                <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0020025519308588">YAKE! Keyword extraction from single documents using multiple local features.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/36399990/">Social Communication Pathways to covid-19 vaccine side-effect expectations and experience.</a></li>
+                <li><a href="https://www.nejm.org/doi/full/10.1056/NEJMp1714229">Implementing machine learning in health care - addressing ethical challenges.</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/7733254">Automatic Keyword Extraction from Medical and Healthcare Curriculum.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/20045099/">A postmodern Pandora's box: Anti-vaccination misinformation on the Internet.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/34607748/">Factors influencing adverse events following immunization with AZD1222 in Vietnamese adults during first half of 2021.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/11257375/">Understanding those who do not understand: a brief review of the anti-vaccine movement.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/27049120/">Can the vaccine adverse event reporting system be used to increase vaccine acceptance and trust?</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/28284680/">Psychological factors associated with uptake of the childhood influenza vaccine and perception of post-vaccination side-effects: A cross-sectional survey in England.</a></li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/26209838/">Safety monitoring in the Vaccine Adverse Event Reporting System (VAERS).</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/9971547">Key information extraction method of traditional Chinese medicine records based on TF-IDF and K-means.</a></li>
+                <li><a href="#0">Understanding vaccine safety information from the Vaccine Adverse Event Reporting System. </a></li>
+                <li><a href="https://academic.oup.com/cid/article/37/3/351/435194">Extensive Limb Swelling after Immunization: Reports to the Vaccine Adverse Event Reporting System.</a></li>
+            </ol>
+        </div> <!-- entry__content -->
+
+        <p class="entry__tags">
+            <span>Tagged in </span>:
+            <a href="#0">References</a>
+        </p>
+
+        <ul class="entry__post-nav h-group">
+            <li class="prev"><a rel="prev" href="{{ url_for('instruction') }}"><strong class="h6">Previous Article</strong>Instruction</a></li>
+            <li class="next"><a rel="next" href="{{ url_for('introduction') }}"><strong class="h6">Next Article</strong>Introduciton</a></li>
+        </ul>
+
+    </article> <!-- end entry -->
+
+{% endblock %}

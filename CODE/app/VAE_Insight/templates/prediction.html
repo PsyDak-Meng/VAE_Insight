@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li class="current"><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<div class="row add-bottom">
+    <div class="column large-full">
+        <h1 class="h-remove-top">WELCOME {{ current_user.username }}!!</h1>
+    </div>
+    <div class="column large-full">
+        <h2 class="h-remove-top">Personal Information</h2>
+    </div>
+</div> <!-- end row -->
+<div class="table-responsive">
+    <table>
+            <thead>
+            <tr>
+                <th>Feature Name</th>
+                <th>Feature Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for f in features %} 
+            <tr>
+                <td>{{ f.key }}</td>
+                <td>{{ f.value }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+</div>
+
+<form action="{{ url_for('edit_info') }}">
+    {{ form.csrf_token }}
+    <input class="btn--primary h-full-width" type="submit" value="Edit Information">
+</form>
+
+<div>
+    <p>Once you confirm the information, you can do the prediction.</p>
+</div>
+
+<form action="{{ url_for('prediction_result') }}">
+    {{ form.csrf_token }}
+    <input class="btn--primary h-full-width" type="submit" value="Prediction">
+</form>
+
+
+
+{% else %}
+<div class="row add-bottom">
+    <div class="column large-full">
+        <h1 class="h-remove-top">Restricted Mode</h1>
+        <p class="lead">Currently not logged in.
+            You are only allowed to view parts of this page when you are not logged in since the prediction section involves too much personal information.
+            For more information on how to use this website refer to the <a href="{{ url_for('instruction') }}">instruction</a> page.
+            Or, you can login to the website by clicking <a href="{{ url_for('login') }}">here</a>.
+        </p>
+    </div>
+</div> <!-- end row -->
+{% endif %}
+
+<div class="row add-bottom">
+    <div class="column large-full">
+        <h2 class="h-remove-top">Prediction</h2>
+    </div>
+</div> <!-- end row -->
+
+{% endblock %}

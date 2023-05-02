@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+{% block content %}
+<div class="row add-bottom">
+
+    <div class="column large-full">
+
+        <h1 class="h-remove-top">Bad Request - 400</h1>
+
+        <p class="lead">Click the backhome button to go back to the home page, or use the navigation bar to go to the page you need.
+        </p>
+
+        <span>
+            <a href="{{ url_for('index') }}">BACKHOME</a>
+        </span>
+
+    </div>
+
+</div> <!-- end row -->
+
+<div class="entry__content-media">
+    <img src="{{ url_for('static', filename='images/totoro.gif') }}"
+         sizes="(max-width: 1000px) 100vw, 1000px" alt="">
+</div>
+
+{% endblock %}

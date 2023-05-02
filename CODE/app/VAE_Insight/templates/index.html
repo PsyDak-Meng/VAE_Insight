@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+
+{% block nav %} 
+<nav class="s-header__nav-wrap">
+    <div class="row">
+        <ul class="s-header__nav">
+            <li class="current"><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>	
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>	
+            <li><a href="{{ url_for('factors') }}">Factors</a></li>
+            <li class="has-children"><a href="#0">Articles</a>
+                <ul>
+                    <li><a href="{{ url_for('introduction') }}">Introduction</a></li>
+                    <li><a href="{{ url_for('instruction') }}">Instruction</a></li>
+                    <li><a href="{{ url_for('referenced') }}">References</a></li>
+                </ul>
+            </li>
+        </ul> <!-- end #nav -->
+    </div> 
+</nav> <!-- end #nav-wrap -->
+<a class="header-menu-toggle" href="#0" title="Menu"><span>Menu</span></a>
+{% endblock %}
+
+
+{% block content %}
+<article class="entry">
+
+    <header class="entry__header">
+
+        <h2 class="entry__title h1">
+            <a href="{{ url_for('introduction') }}" title="">Hey, We Are VAE-Insight!</a>
+        </h2>
+
+        <div class="entry__meta">
+            <ul>
+                <li>March 29, 2023</li>
+                <li><a href="#" title="" rel="category tag">Introduction</a></li>
+                <li>TEAM023</li>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="entry__content">
+        <p>
+            During the past two years of the pandemic, 
+            people have seen voluminous hype about the vaccine's effectiveness and, 
+            at the same time, heaps of misinformed allegations about the vaccine's side effects. 
+            The non-transparency of the potential danger of vaccines makes it challenging to build utter trust in them. 
+            As recipients, people often oscillate between the hazards of the virus and the vaccine's potential side effects and often feel fear and anxiety. 
+            Therefore, the VAE-Insight is design to make some difference in helping every person who may not understand those obscure biomedical sciences figure out the effects of the vaccine, 
+            especially its harmful effects, considering that its positivity has been well reported and publicized.
+        </p>
+    </div> 
+
+</article> <!-- end entry -->
+
+
+<article class="entry">
+
+    <header class="entry__header">
+
+        <h2 class="entry__title h1">
+            <a href="{{ url_for('instruction') }}" title="">Instruction: How should you use this website.</a>
+        </h2>
+
+        <div class="entry__meta">
+            <ul>
+                <li>March 29, 2023</li>
+                <li><a href="#" title="" rel="category tag">Instruction</a></li>
+                <li>TEAM023</li>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="entry__content">
+        <p>
+            The VAE-Insight is an integrated website to provide users 
+            with complete information on vaccines and side effects as well as visualization of models and their result.
+            Users can use this website in the following ways:
+            <ol>
+                <li>Login/Register: make up a account to obtain the whole access of the website and store their own information.</li>
+                <li>Prediction: employ the prediction function.</li>
+                <li>Factors: explore the relationship between features and side effects by utilizing the visualizations constructed by us.</li>
+            </ol>
+        </p>
+    </div> 
+
+</article> <!-- end entry -->
+
+<article class="entry">
+
+    <header class="entry__header">
+
+        <h2 class="entry__title h1">
+            <a href="{{ url_for('referenced') }}" title="">Whole list of the referenced papers.</a>
+        </h2>
+
+        <div class="entry__meta">
+            <ul>
+                <li>Apr 05, 2023</li>
+                <li><a href="#" title="" rel="category tag">References</a></li>
+                <li>TEAM023</li>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <div class="entry__content">
+        <p>
+        Provide the whole list of the referenced papers.
+        </p>
+    </div> 
+
+</article> <!-- end entry -->
+
+
+{% endblock %}
