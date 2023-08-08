@@ -16,3 +16,6 @@ To train the model and experiment
 - open train.ipynb to train the model and see the evaluation
 or
 - run model.py to call the model
+
+## Demo Video
+https://youtu.be/A25yyVlHtD8
