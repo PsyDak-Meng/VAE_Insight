@@ -19,3 +19,7 @@ or
 
 ## Demo Video
 https://youtu.be/A25yyVlHtD8
+![image](https://github.com/PsyDak-Meng/VAE_Insight/assets/105434864/a721fb0d-1501-4b27-9baa-e0617549ae5c)
+![image](https://github.com/PsyDak-Meng/VAE_Insight/assets/105434864/78f8f2f9-44ab-4622-a8da-63b7e9aca8f9)
+![image](https://github.com/PsyDak-Meng/VAE_Insight/assets/105434864/47af0de9-35dc-4610-84ff-6d542aef52a5)
+
